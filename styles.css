@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --strong_cyan: hsl(172, 67%, 45%);
+  --very_dark_cyan: hsl(183, 100%, 15%);
+  --dark_grayish_cyan: hsl(186, 14%, 43%);
+  --grayish_cyan: hsl(184, 14%, 56%);
+  --light_grayish_cyan: hsl(185, 41%, 84%);
+  --very_light_grayish_cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Space Mono", sans-serif;
+  background-color: var(--light_grayish_cyan);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 4rem;
+  padding: 3rem;
+}
+
+.splitter {
+  width: 100%;
+  max-width: 55rem;
+  height: 27rem;
+  border-radius: 1rem;
+  background-color: var(--white);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.splitter_left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.field_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.field_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.field_heading p:nth-child(1) {
+  color: var(--grayish_cyan);
+}
+
+.error {
+  color: #b77f70;
+  display: none;
+}
+
+.input_field {
+  height: 3rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding-right: 0.8rem;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dark_grayish_cyan);
+  text-align: right;
+  font-family: "Space Mono", sans-serif;
+}
+
+.bill_amount {
+  background: url(images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-position: left 10px top 50%;
+  background-color: var(--very_light_grayish_cyan);
+}
+
+.people_count {
+  background: url(images/icon-person.svg);
+  background-repeat: no-repeat;
+  background-position: left 10px top 50%;
+  background-color: var(--very_light_grayish_cyan);
+}
+
+input::placeholder {
+  font-family: "Space Mono", sans-serif;
+  position: absolute;
+  right: 0.8rem;
+  top: 0.5rem;
+  font-size: 22px;
+  color: var(--grayish_cyan);
+}
+
+input:focus {
+  border: 2px solid var(--strong_cyan);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.tips_container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.tip_button {
+  font-family: "Space Mono", sans-serif;
+  border: none;
+  height: 3rem;
+  border-radius: 5px;
+  color: var(--white);
+  background-color: var(--very_dark_cyan);
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.active_tip_button {
+  background-color: var(--strong_cyan);
+  color: var(--very_dark_cyan);
+}
+
+.tip_button:hover {
+  background-color: var(--light_grayish_cyan);
+  color: var(--very_dark_cyan);
+}
+
+.custom_input:hover {
+  cursor: default;
+  background-color: var(--light_grayish_cyan);
+}
+
+.custom_input:focus {
+  cursor: unset;
+  background-color: var(--very_light_grayish_cyan);
+}
+
+.splitter_right {
+  background-color: var(--very_dark_cyan);
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tip_amount_total_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.calculated_amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.amount_heading p:nth-child(1) {
+  color: var(--white);
+}
+
+.amount_heading p:nth-child(2) {
+  color: var(--grayish_cyan);
+}
+
+.tip_amount,
+.total_amount {
+  color: var(--strong_cyan);
+  font-size: 2rem;
+}
+
+.reset {
+  background-color: var(--strong_cyan);
+  border: none;
+  color: var(--very_dark_cyan);
+  height: 3rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (width<=850px) {
+  .splitter {
+    grid-template-columns: 1fr;
+    height: 46rem;
+  }
+  .reset {
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (width <=500px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .splitter {
+    padding: 1rem;
+    width: unset;
+  }
+  .splitter_right {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main class="container">
+      <img src="images/logo.svg" alt="logo" />
+      <div class="splitter">
+        <section class="splitter_left">
+          <div class="field_container">
+            <div class="field_heading">
+              <p>Bill</p>
+              <p class="error">Can't be zero</p>
+            </div>
+            <input
+              type="number"
+              placeholder="0"
+              class="input_field bill_amount"
+              name="billAmount"
+            />
+          </div>
+          <div class="field_container">
+            <div class="field_heading">
+              <p>Select Tip %</p>
+              <p class="error"></p>
+            </div>
+            <div class="tips_container">
+              <button class="tip_button">5%</button>
+              <button class="tip_button">10%</button>
+              <button class="tip_button">15%</button>
+              <button class="tip_button">25%</button>
+              <button class="tip_button">50%</button>
+              <input
+                type="number"
+                class="input_field custom_input"
+                placeholder="Custom"
+                name="customTip"
+              />
+            </div>
+          </div>
+          <div class="field_container">
+            <div class="field_heading">
+              <p>Number of People</p>
+              <p class="error">Can't be zero</p>
+            </div>
+            <input
+              type="number"
+              placeholder="1"
+              class="input_field people_count"
+              name="peopleCount"
+            />
+          </div>
+        </section>
+        <section class="splitter_right">
+          <div class="tip_total_container">
+            <div class="tip_amount_total_container">
+              <div class="calculated_amount">
+                <div class="amount_heading">
+                  <p>Tip Amount</p>
+                  <p>/ person</p>
+                </div>
+                <div class="tip_amount">$0.00</div>
+              </div>
+              <div class="calculated_amount">
+                <div class="amount_heading">
+                  <p>Total</p>
+                  <p>/ person</p>
+                </div>
+                <div class="total_amount">$0.00</div>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="reset">RESET</button>
+        </section>
+      </div>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/vishwa3" target="_blank">Cheech & Chong</a>
+    </div>
+  </body>
+</html>
